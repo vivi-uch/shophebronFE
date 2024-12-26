@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="app" viewBox="0 0 64 64">
+  <rect width="20" height="20" x="9" y="9" style="fill:none;stroke:#078cd6;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px"></rect>
+  <rect width="20" height="20" x="35" y="9" style="fill:none;stroke:#078cd6;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px"></rect>
+  <rect width="20" height="20" x="9" y="35" style="fill:none;stroke:#078cd6;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px"></rect>
+  <rect width="20" height="20" x="35" y="35" style="fill:none;stroke:#078cd6;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px"></rect>
+</svg>
