@@ -4,6 +4,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import icon from "/Assets/icon.png";
 import Header from "./components/Header";
 import LoginPage from "./routes/LoginPage";
+import Filter from "./components/Filter";
+import ProductDisplay from "./components/ProductDisplay";
+import CategoryProduct from "./components/CategoryProduct";
 
 function App() {
   return (
@@ -60,12 +63,12 @@ function LandingPage() {
           <animated.img
             src={icon}
             alt="Shop Hebron Icon"
-            className="w-32 h-32"
+            className="w-20 h-20 md:w-32 md:h-32"
             style={slideInEffect}
           />
           <animated.h1
             style={typingEffect}
-            className="text-[#662D91] text-7xl font-bold"
+            className="text-[#662D91] text-2xl md:text-7xl font-bold"
           >
             {text}
           </animated.h1>
@@ -73,6 +76,8 @@ function LandingPage() {
       ) : (
         <>
           <Header />
+          <Filter />
+          <CategoryProduct />
         </>
       )}
     </div>

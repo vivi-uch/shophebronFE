@@ -1,0 +1,130 @@
+import { useState, useEffect } from "react";
+import axios from "axios";
+
+function Filter() {
+  const [category, setCategory] = useState("");
+  const [brand, setBrand] = useState("");
+  const [deltime, setDeltime] = useState("");
+  const [price, setPrice] = useState("");
+  const [rating, setRating] = useState("");
+
+  const [categories, setCategories] = useState([]);
+  const [brands, setBrands] = useState([]);
+  const [deltimes, setDeltimes] = useState([]);
+  const [prices, setPrices] = useState([]);
+  const [ratings, setRatings] = useState([]);
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const response = await axios.get(
+          "https://run.mocky.io/v3/c82d5f7c-9732-4b4d-b3a3-811bc920c531"
+        );
+        setCategories(response.data);
+      } catch (error) {
+        console.error("Error fetching categories:", error);
+      }
+    };
+
+    const fetchBrands = async () => {
+      try {
+        const response = await axios.get(
+          "https://run.mocky.io/v3/d98cea0b-447a-4592-9884-e9fcf18f1770"
+        );
+        setBrands(response.data);
+      } catch (error) {
+        console.error("Error fethcing brands:", error);
+      }
+    };
+
+    const fetchPrices = async () => {
+      try {
+        const response = await axios.get(
+          "https://run.mocky.io/v3/95c84c01-055d-46e6-88d4-c4c3109d1d3f"
+        );
+        setPrices(response.data);
+      } catch (error) {
+        console.error("Error fethcing Prices:", error);
+      }
+    };
+
+    const fetchDelTimes = async () => {
+      try {
+        const response = await axios.get(
+          "https://run.mocky.io/v3/911df0bc-34de-4da7-9341-cb0c34a7650a"
+        );
+        setDeltimes(response.data);
+      } catch (error) {
+        console.error("Error fethcing Delivery times:", error);
+      }
+    };
+
+    const fetchRating = async () => {
+      try {
+        const response = await axios.get(
+          "https://run.mocky.io/v3/fd2aa250-35ec-469c-9ba0-109c32cd5856"
+        );
+        setRatings(response.data);
+      } catch (error) {
+        console.error("Error fethcing Ratings:", error);
+      }
+    };
+
+    fetchCategories();
+    fetchBrands();
+    fetchPrices();
+    fetchDelTimes();
+    fetchRating();
+  }, []);
+
+  return (
+    <div className="bg-[#FFED8D] fixed top-16 w-full px-4 py-3 flex items-center justify-between z-50">
+      {/* categories */}
+      <select onChange={(e) => setCategory(e.target.value)}>
+        <option value="">Category</option>
+        {categories.map((category) => (
+          <option key={category.id} value={category.id}>
+            {category.name}
+          </option>
+        ))}
+      </select>
+      {/* brands */}
+      <select onChange={(e) => setBrand(e.target.value)}>
+        <option value="">Brands</option>
+        {brands.map((brand) => (
+          <option key={brand.id} value={brand.id}>
+            {brand.name}
+          </option>
+        ))}
+      </select>
+      {/* delivery time */}
+      <select onChange={(e) => setDeltimes(e.target.value)}>
+        <option value="">Delivery time</option>
+        {deltimes.map((category) => (
+          <option key={category.id} value={category.id}>
+            {category.time}
+          </option>
+        ))}
+      </select>
+      {/* Price */}
+      <select onChange={(e) => setPrices(e.target.value)}>
+        <option value="">Price</option>
+        {prices.map((category) => (
+          <option key={category.id} value={category.id}>
+            {category.range}
+          </option>
+        ))}
+      </select>
+      {/* rating */}
+      <select onChange={(e) => setRatings(e.target.value)}>
+        <option value="">Ratings</option>
+        {ratings.map((category) => (
+          <option key={category.id} value={category.id}>
+            {category.stars}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+}
+export default Filter;
