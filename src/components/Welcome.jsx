@@ -1,15 +1,58 @@
 import React from 'react';
 import icon from "/Assets/icon.png"; // Logo icon
 import grin from "/Images/grin.svg"; // Grin SVG
+import star from '/Images/star.svg';
 import { Link } from 'react-router-dom'; // Optional, if using React Router for navigation
 
 const Welcome = () => {
   return (
-    <div className="bg-[#F8F8FF] h-screen relative">
+    <div className="bg-[#FFFFFF] h-screen relative">
       {/* Logo in Top-Left Corner */}
-      <div className="absolute top-4 right-4">
+      <div className="absolute top-8 right-20">
         <img src={icon} alt="Logo" className="w-16 h-16" />
       </div>
+
+       {/* Star SVG in Top-Right Corner */}
+        <div className="absolute top-5 right-5">
+            <img src={star} alt="Star Icon" className="w-10 h-10" />
+        </div>
+
+        {/* Diagonal Copy of Top-Right Star (Below it) */}
+        <div className="absolute top-[calc(5rem+20px)] right-[calc(5rem+20px)]">
+            <img src={star} alt="Star Icon" className="w-10 h-10" />
+        </div>
+
+        {/* Copy of Star SVG in Bottom-Right Corner */}
+        <div className="absolute bottom-5 right-5">
+            <img src={star} alt="Star Icon" className="w-10 h-10" />
+        </div>
+
+        {/* Diagonal Copy of Bottom-Right Star (Above it) */}
+        <div className="absolute bottom-[calc(5rem+20px)] right-[calc(5rem+20px)]">
+            <img src={star} alt="Star Icon" className="w-10 h-10" />
+        </div>
+
+        {/* Star SVG in Top-Left Corner */}
+        <div className="absolute top-5 left-5">
+            <img src={star} alt="Star Icon" className="w-10 h-10" />
+        </div>
+
+        {/* Diagonal Copy of Top-Left Star (Below it) */}
+        <div className="absolute top-[calc(5rem+20px)] left-[calc(5rem+20px)]">
+            <img src={star} alt="Star Icon" className="w-10 h-10" />
+        </div>
+
+        {/* Copy of Star SVG in Bottom-Left Corner */}
+        <div className="absolute bottom-5 left-5">
+            <img src={star} alt="Star Icon" className="w-10 h-10" />
+        </div>
+
+        {/* Diagonal Copy of Bottom-Left Star (Above it) */}
+        <div className="absolute bottom-[calc(5rem+20px)] left-[calc(5rem+20px)]">
+            <img src={star} alt="Star Icon" className="w-10 h-10" />
+        </div>
+
+
 
       {/* Welcome Section in the Center */}
       <div className="flex justify-center items-center h-full">
